@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@preact/preset-vite': ^2.3.0
   '@pronestor/react-zoom-pan-pinch': ^2.3.0
+  babel-plugin-htm: ^3.0.0
   htm: ^3.1.1
   preact: ^10.9.0
   typescript: ^4.6.4
@@ -15,6 +16,7 @@ dependencies:
 
 devDependencies:
   '@preact/preset-vite': 2.3.0_preact@10.10.0+vite@3.0.0
+  babel-plugin-htm: 3.0.0
   htm: 3.1.1
   typescript: 4.7.4
   unocss: 0.44.3_vite@3.0.0
@@ -568,6 +570,12 @@ packages:
     dependencies:
       normalize-path: 3.0.0
       picomatch: 2.3.1
+    dev: true
+
+  /babel-plugin-htm/3.0.0:
+    resolution: {integrity: sha512-liW2CNTK/6p1fdySX0b/wfc+7sZqF2iO3NLi9ylU6p5+SSk/0qs5M6UOUQ5r4RaC/nYgbM4XlAJF8VLJjX13OQ==}
+    dependencies:
+      htm: 3.1.1
     dev: true
 
   /babel-plugin-transform-hook-names/1.0.2:
