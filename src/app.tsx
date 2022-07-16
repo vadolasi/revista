@@ -3,7 +3,7 @@ import { html } from "htm/preact"
 
 export function App() {
   return html`
-    <${TransformWrapper} minScale=${.5} centerOnInit=${true}>
+    <${TransformWrapper} minScale=${.25} initialScale=${.5} centerOnInit=${true}>
       <${TransformComponent} wrapperClass="!w-screen !h-screen">
         <div class="p-30">
           <div class="w-200 h-300 bg-blue">
