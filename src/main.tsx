@@ -1,7 +1,7 @@
 import { render } from "preact"
-import { App } from "./app"
+import { Routes } from "./routes"
 import { html } from "htm/preact"
 
 import "uno.css"
 
-render(html`<${App} />`, document.getElementById("app") as HTMLElement)
+render(html`<${Routes} />`, document.getElementById("app") as HTMLElement)

@@ -1,7 +1,8 @@
 import { TransformWrapper, TransformComponent } from "@pronestor/react-zoom-pan-pinch"
 import { html } from "htm/preact"
+import { FunctionComponent } from "preact"
 
-export function App() {
+export const Maganize: FunctionComponent = () => {
   return html`
     <${TransformWrapper} minScale=${.25} initialScale=${.5} centerOnInit=${true}>
       <${TransformComponent} wrapperClass="!w-screen !h-screen">
