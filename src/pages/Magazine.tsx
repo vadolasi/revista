@@ -1,4 +1,5 @@
 import { TransformWrapper, TransformComponent } from "@pronestor/react-zoom-pan-pinch"
+import { html } from "htm/preact"
 import { FunctionComponent } from "preact"
 import { useEffect, useState } from "preact/hooks"
 import { Bottom } from "../components/Bottom"
@@ -8,30 +9,30 @@ export const Maganize: FunctionComponent = () => {
   const [currentImage, setCurrentImage] = useState<string>()
 
   useEffect(() => {
-    setCurrentImage(new URL(`./magazine/${currentPage}.svg`, import.meta.url).toString())
+    setCurrentImage(new URL(`../assets/magazine/${currentPage}.svg`, import.meta.url).href)
   }, [currentPage])
 
-  return (
+  return html`
     <div class="!w-screen !h-screen flex flex-col">
-      <TransformWrapper minScale={.25} initialScale={.5} centerOnInit={true}>
-        <TransformComponent wrapperClass="!w-full">
-          <img src={currentImage} />
-        </TransformComponent>
-      </TransformWrapper>
-      <Bottom
-        pagesNumber={9}
-        currentPage={currentPage}
-        onPreviousPage={() => {
+      <${TransformWrapper} minScale=${.25} initialScale=${.5} centerOnInit=${true}>
+        <${TransformComponent} wrapperClass="!w-full">
+          <div>${currentImage}</div>
+        </>
+      </>
+      <${Bottom}
+        pagesNumber=${9}
+        currentPage=${currentPage}
+        onPreviousPage=${() => {
           if (currentPage > 1) {
             setCurrentPage(currentPage - 1)
           }
         }}
-        onNextPage={() => {
+        onNextPage=${() => {
           if (currentPage < 9) {
             setCurrentPage(currentPage + 1)
           }
         }}
       />
     </div>
-  )
+  `
 }

@@ -1,10 +1,13 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@babel/plugin-transform-react-jsx-source': ^7.18.6
   '@preact/preset-vite': ^2.3.0
   '@pronestor/react-zoom-pan-pinch': ^2.3.0
   axios: ^0.27.2
+  babel-plugin-htm: ^3.0.0
   gapi-script: ^1.2.0
+  htm: ^3.1.1
   preact: ^10.9.0
   react-google-login: ^5.2.2
   typescript: ^4.6.4
@@ -21,7 +24,10 @@ dependencies:
   wouter-preact: 2.8.0-alpha.2_preact@10.10.0
 
 devDependencies:
+  '@babel/plugin-transform-react-jsx-source': 7.18.6
   '@preact/preset-vite': 2.3.0_preact@10.10.0+vite@3.0.0
+  babel-plugin-htm: 3.0.0
+  htm: 3.1.1
   typescript: 4.7.4
   unocss: 0.44.3_vite@3.0.0
   vite: 3.0.0
@@ -227,6 +233,15 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/plugin-transform-react-jsx': 7.18.6
+    dev: true
+
+  /@babel/plugin-transform-react-jsx-source/7.18.6:
+    resolution: {integrity: sha512-utZmlASneDfdaMh0m/WausbjUjEdGrQJz0vFK93d7wD3xf5wBtX219+q6IlCNZeguIcxS2f/CvLZrlLSvSHQXw==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/helper-plugin-utils': 7.18.6
     dev: true
 
   /@babel/plugin-transform-react-jsx/7.18.6:
@@ -604,6 +619,12 @@ packages:
     transitivePeerDependencies:
       - debug
     dev: false
+
+  /babel-plugin-htm/3.0.0:
+    resolution: {integrity: sha512-liW2CNTK/6p1fdySX0b/wfc+7sZqF2iO3NLi9ylU6p5+SSk/0qs5M6UOUQ5r4RaC/nYgbM4XlAJF8VLJjX13OQ==}
+    dependencies:
+      htm: 3.1.1
+    dev: true
 
   /babel-plugin-transform-hook-names/1.0.2:
     resolution: {integrity: sha512-5gafyjyyBTTdX/tQQ0hRgu4AhNHG/hqWi0ZZmg2xvs2FgRkJXzDNKBZCyoYqgFkovfDrgM8OoKg8karoUvWeCw==}
@@ -1095,6 +1116,10 @@ packages:
     engines: {node: '>= 0.4.0'}
     dependencies:
       function-bind: 1.1.1
+    dev: true
+
+  /htm/3.1.1:
+    resolution: {integrity: sha512-983Vyg8NwUE7JkZ6NmOqpCZ+sh1bKv2iYTlUkzlWmA5JD2acKoxd4KVxbMmxX/85mtfdnDmTFoNKcg5DGAvxNQ==}
     dev: true
 
   /human-signals/2.1.0:
