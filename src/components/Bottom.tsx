@@ -1,4 +1,3 @@
-import { html } from "htm/preact"
 import { FunctionComponent } from "preact"
 
 interface Props {

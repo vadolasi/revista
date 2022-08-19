@@ -9,7 +9,7 @@ export const Maganize: FunctionComponent = () => {
 
   useEffect(() => {
     setCurrentImage(new URL(`./magazine/${currentPage}.svg`, import.meta.url).toString())
-  } , [currentPage])
+  }, [currentPage])
 
   return (
     <div class="!w-screen !h-screen flex flex-col">
