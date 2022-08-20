@@ -17,4 +17,7 @@ export default defineConfig({
     }),
     Unocss()
   ],
+  server: {
+    host: true
+  }
 })
