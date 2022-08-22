@@ -17,9 +17,9 @@ export const Bottom: FunctionComponent<Props> = ({ currentPage, pagesNumber, onN
         <div class="h-1 bg-cyan-400" style=${{ width: `${pagesProgress}%` }}></div>
       </div>
       <div class="flex items-center content-center h-full mx-auto mt-1">
-        <div class="flex gap-8">
-          <button class="bg-transparent text-gray-200 border-0 text-5xl" onClick=${() => onPreviousPage()}><i class="fa-solid fa-arrow-left"></i></button>
-          <button class="bg-transparent text-gray-200 border-0 text-5xl" onClick=${() => onNextPage()}><i class="fa-solid fa-arrow-right"></i></button>
+        <div class="flex gap-6">
+          <button class="bg-transparent text-gray-200 border-0 text-4xl" onClick=${() => onPreviousPage()}><i class="fa-solid fa-arrow-left"></i></button>
+          <button class="bg-transparent text-gray-200 border-0 text-4xl" onClick=${() => onNextPage()}><i class="fa-solid fa-arrow-right"></i></button>
         </div>
       </div>
     </div>

@@ -4,6 +4,7 @@ import { FunctionComponent, JSX } from "preact"
 import { useState } from "preact/hooks"
 import { Link, useLocation, useRoute } from "wouter-preact"
 import { Bottom } from "../components/Bottom"
+import axios from "axios"
 
 const pages: { [key: number]: (setModelContent: (content: JSX.Element) => void) => JSX.Element } = {
   1: () => html``,
@@ -108,7 +109,22 @@ const pages: { [key: number]: (setModelContent: (content: JSX.Element) => void) 
   12: () => html``,
   13: () => html``,
   14: () => html``,
-  15: () => html``,
+  15: () => {
+    const api = axios.create({ baseURL: "https://imdb-api.com/API/SearchMovie/k_0oi2umec/" })
+
+    function modalContent() {
+      return html`
+        <label>Nome do filme</label>
+        <input type="text" />
+
+        <button>Pesquisar</button>
+      `
+    }
+
+    return html`
+      <button style=${{}}></button>
+    `
+  },
   16: () => html``,
   17: () => html``,
   18: () => html``,
