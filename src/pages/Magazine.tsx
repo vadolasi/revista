@@ -159,7 +159,6 @@ export const Maganize: FunctionComponent = () => {
 
   return html`
     <div class="!w-screen !h-screen flex flex-col bg-slate-800">
-      <p>${currentPage}</p>
       ${modelIsOpen && html`
         <div class="absolute w-100 h-100 w-screen h-screen z-50 flex justify-center items-center">
           <div class="w-screen h-screen bg-black opacity-75 absolute z-40" onClick=${() => setModelIsOpen(false)}></div>
@@ -181,11 +180,13 @@ export const Maganize: FunctionComponent = () => {
         onPreviousPage=${() => {
           if (currentPage > 1) {
             setCurrentPage(currentPage - 1)
+            console.log(currentImage)
           }
         }}
         onNextPage=${() => {
           if (currentPage < pagesNumber) {
             setCurrentPage(currentPage + 1)
+            console.log(currentImage)
           }
         }}
       />
