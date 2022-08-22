@@ -17,6 +17,7 @@ specifiers:
   typescript: ^4.6.4
   unocss: ^0.44.3
   vite: ^3.0.0
+  vite-plugin-dynamic-import: ^1.1.1
   vite-plugin-ssr: ^0.4.24
   wouter-preact: 2.8.0-alpha.2
 
@@ -40,6 +41,7 @@ devDependencies:
   typescript: 4.7.4
   unocss: 0.44.3_vite@3.0.0
   vite: 3.0.0
+  vite-plugin-dynamic-import: 1.1.1
   vite-plugin-ssr: 0.4.24_vite@3.0.0
 
 packages:
@@ -2626,6 +2628,12 @@ packages:
 
   /vite-plugin-dist-importer/0.3.2:
     resolution: {integrity: sha512-pjK0KK8rYBTckvNniBknvqGir77HgKwA0qQZ7W1oOjOHklgeY+Sgi6rpg0vVZbft5alG0ij19IqrPoeT4e76VQ==}
+    dev: true
+
+  /vite-plugin-dynamic-import/1.1.1:
+    resolution: {integrity: sha512-ZAt0ppn9LI3jsa4m4I8H25DKHQb/rqD9MQFrnxyY1j4maUb4FmczVPzlP2khk2i7ns2/fPdfHurAMUEWBBXHpg==}
+    dependencies:
+      fast-glob: 3.2.11
     dev: true
 
   /vite-plugin-glob/0.2.8:
