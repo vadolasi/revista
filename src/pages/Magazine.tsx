@@ -85,14 +85,22 @@ const pages: { [key: number]: (setModelContent: (content: JSX.Element) => void) 
 
     return html`
       <button
-        class="bg-transparent rounded-0"
-        style=${{ width: "336px", height: "270px", marginLeft: "416px", marginTop: "237px" }}
+        class="bg-transparent rounded-0 border-0"
+        style=${{ width: "92px", height: "70px", marginLeft: "538px", marginTop: "875px" }}
         onClick=${() => setModelContent(modalContent())}>
       </button>
     `
   },
   6: () => html``,
-  7: () => html``,
+  7: () => html`
+    <button
+      class="border-0 bg-transparent"
+      style=${{ width: "160px", height: "170px", marginLeft: "338px", marginTop: "710px" }}
+      onClick=${() => {
+        window.open("https://puzzlefactory.pl/pt/quebra-cabeça/peça/paisagens/467868-capoeira#7x4")
+      }}
+    ></button>
+  `,
   8: () => html``,
   9: () => html``,
   10: () => html``,
@@ -102,16 +110,32 @@ const pages: { [key: number]: (setModelContent: (content: JSX.Element) => void) 
   14: () => html``,
   15: () => html``,
   16: () => html``,
-  17: () => html``
+  17: () => html``,
+  18: () => html``,
+  19: () => html``,
+  20: () => html``,
+  21: () => html``,
+  22: () => html``,
+  23: () => html`
+    <button
+      class="border-0 bg-transparent"
+      style=${{ width: "160px", height: "170px", marginLeft: "540px", marginTop: "610px" }}
+      onClick=${() => {
+        window.open("https://criadordecruzadinhas.com.br/wordsearch/6302d6da796f0b005ca55482")
+      }}
+    ></button>
+  `,
+  24: () => html``
 }
 
 export const Maganize: FunctionComponent = () => {
-  const [, params] = useRoute<{ page: string }>("/:page")
-  const currentPage = params?.page ? parseInt(params.page) : 1
-  const pagesNumber = 17
-  const [, setLocation] = useLocation()
+  // const [, params] = useRoute<{ page: string }>("/:page")
+  // const currentPage = params?.page ? parseInt(params.page) : 1
+  const pagesNumber = 24
+  // const [, setLocation] = useLocation()
   const [modelContent, setModelContent] = useState<JSX.Element>()
   const [modelIsOpen, setModelIsOpen] = useState(false)
+  const [currentPage, setCurrentPage] = useState(1)
 
   const currentImage = new URL(`../assets/magazine/${currentPage}.svg`, import.meta.url).href
 
@@ -143,12 +167,14 @@ export const Maganize: FunctionComponent = () => {
         currentPage=${currentPage}
         onPreviousPage=${() => {
           if (currentPage > 1) {
-            setLocation(`/${currentPage - 1}`)
+            // setLocation(`/${currentPage - 1}`)
+            setCurrentPage(currentPage - 1)
           }
         }}
         onNextPage=${() => {
           if (currentPage < pagesNumber) {
-            setLocation(`/${currentPage + 1}`)
+            // setLocation(`/${currentPage + 1}`)
+            setCurrentPage(currentPage + 1)
           }
         }}
       />
