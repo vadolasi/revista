@@ -16,7 +16,7 @@ export default defineConfig({
       }
     }),
     Unocss(),
-    dynamicImport()
+    dynamicImport.default()
   ],
   server: {
     host: true
