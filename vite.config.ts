@@ -10,8 +10,7 @@ export default defineConfig({
           ["babel-plugin-htm", {
             "tag": "html",
             "import": "preact"
-          }],
-          "@babel/plugin-transform-react-jsx-source"
+          }]
         ]
       }
     }),

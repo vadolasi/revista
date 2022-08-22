@@ -129,13 +129,12 @@ const pages: { [key: number]: (setModelContent: (content: JSX.Element) => void) 
 }
 
 export const Maganize: FunctionComponent = () => {
-  // const [, params] = useRoute<{ page: string }>("/:page")
-  // const currentPage = params?.page ? parseInt(params.page) : 1
+  const [, params] = useRoute<{ page: string }>("/:page")
+  const currentPage = params?.page ? parseInt(params.page) : 1
   const pagesNumber = 24
-  // const [, setLocation] = useLocation()
+  const [, setLocation] = useLocation()
   const [modelContent, setModelContent] = useState<JSX.Element>()
   const [modelIsOpen, setModelIsOpen] = useState(false)
-  const [currentPage, setCurrentPage] = useState(1)
 
   const currentImage = new URL(`../assets/magazine/${currentPage}.svg`, import.meta.url).href
 
@@ -145,7 +144,7 @@ export const Maganize: FunctionComponent = () => {
   }
 
   return html`
-    <div class="!w-screen !h-screen flex flex-col">
+    <div class="!w-screen !h-screen flex flex-col bg-slate-800">
       ${modelIsOpen && html`
         <div class="absolute w-100 h-100 w-screen h-screen z-50 flex justify-center items-center">
           <div class="w-screen h-screen bg-black opacity-75 absolute z-40" onClick=${() => setModelIsOpen(false)}></div>
@@ -167,14 +166,12 @@ export const Maganize: FunctionComponent = () => {
         currentPage=${currentPage}
         onPreviousPage=${() => {
           if (currentPage > 1) {
-            // setLocation(`/${currentPage - 1}`)
-            setCurrentPage(currentPage - 1)
+            setLocation(`/${currentPage - 1}`)
           }
         }}
         onNextPage=${() => {
           if (currentPage < pagesNumber) {
-            // setLocation(`/${currentPage + 1}`)
-            setCurrentPage(currentPage + 1)
+            setLocation(`/${currentPage + 1}`)
           }
         }}
       />
