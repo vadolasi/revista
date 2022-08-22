@@ -178,8 +178,8 @@ export const Maganize: FunctionComponent = () => {
         </>
       </>
       <${Bottom}
-        pagesNumber=${pagesNumber}
-        currentPage=${currentPage}
+        pagesNumber=${pagesNumber - 1}
+        currentPage=${currentPage - 1}
         onPreviousPage=${() => {
           if (currentPage > 1) {
             setLocation(`/${currentPage - 1}`)
@@ -187,6 +187,7 @@ export const Maganize: FunctionComponent = () => {
         }}
         onNextPage=${() => {
           if (currentPage < pagesNumber) {
+            console.log("Teste")
             setLocation(`/${currentPage + 1}`)
           }
         }}

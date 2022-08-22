@@ -1,5 +1,6 @@
 import { html } from "htm/preact"
 import { FunctionComponent } from "preact"
+import { classes } from "../utils"
 
 interface Props {
   pagesNumber: number
@@ -18,8 +19,8 @@ export const Bottom: FunctionComponent<Props> = ({ currentPage, pagesNumber, onN
       </div>
       <div class="flex items-center content-center h-full mx-auto mt-1">
         <div class="flex gap-6">
-          <button class="bg-transparent text-gray-200 border-0 text-4xl" onClick=${() => onPreviousPage()}><i class="fa-solid fa-arrow-left"></i></button>
-          <button class="bg-transparent text-gray-200 border-0 text-4xl" onClick=${() => onNextPage()}><i class="fa-solid fa-arrow-right"></i></button>
+          <button class=${classes({ "text-transparent": currentPage === 0 }, "text-gray-200 bg-transparent border-0 text-4xl")} onClick=${() => onPreviousPage()}><i class="fa-solid fa-arrow-left"></i></button>
+          <button class=${classes({ "text-transparent": currentPage === pagesNumber }, "text-gray-200 bg-transparent border-0 text-4xl")} onClick=${() => onNextPage()}><i class="fa-solid fa-arrow-right"></i></button>
         </div>
       </div>
     </div>

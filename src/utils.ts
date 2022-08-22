@@ -4,5 +4,5 @@ export function classes(dynamic: { [key: string]: boolean }, classes = "") {
     .map((entry) => entry[0])
     .join(" ")
     .concat(" ")
-    .concat(classes);
+    .concat(classes)
 }
