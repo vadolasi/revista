@@ -195,7 +195,7 @@ export const Maganize: FunctionComponent = () => {
           }
         }}
       />
-      <button onclick=${setCurrentPage(currentPage + 1)} />
+      <button onclick=${() => setCurrentPage(currentPage + 1)} />
     </div>
   `
 }
