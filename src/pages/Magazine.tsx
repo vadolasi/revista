@@ -153,7 +153,7 @@ export const Maganize: FunctionComponent = () => {
 
   useEffect(() => {
     setCurrentImage(new URL(`../assets/magazine/${currentPage}.svg`, import.meta.url).href)
-  }, [currentImage])
+  }, [currentPage])
 
   function setModalContent(content: JSX.Element) {
     setModelContent(content)
