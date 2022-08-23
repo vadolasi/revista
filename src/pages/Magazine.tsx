@@ -6,60 +6,60 @@ import { Link, useLocation, useRoute } from "wouter-preact"
 import { Bottom } from "../components/Bottom"
 import axios from "axios"
 
-const pages: { [key: number]: (setModelContent: (content: JSX.Element) => void) => JSX.Element } = {
+const pages: { [key: number]: (setModelContent: (content: JSX.Element) => void, setPage: (page: number) => void) => JSX.Element } = {
   1: () => html``,
-  2: () => {
+  2: (_, setPage) => {
     return html`
       <nav style=${{ marginTop: "300px", width: "520px" }}>
         <ul class="list-none">
           <li>
-            <${Link} class="flex text-white text-3xl no-underline" href="/3">
+            <div class="flex text-white text-3xl no-underline" onClick=${() => setPage(3)}>
               <span class="whitespace-nowrap">Carta ao leitor</span>
               <div class="border-0 border-b-2 border-dotted w-full mb-2 mx-3"></div>
               <span>3</span>
-            </>
+            </div>
           </li>
           <li>
-            <${Link} class="flex text-white text-3xl no-underline mt-5" href="/4">
+            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setPage(4)}>
               <span class="whitespace-nowrap">Quem somos nós?</span>
               <div class="border-0 border-b-2 border-dotted w-full mb-2 mx-3"></div>
               <span>4</span>
-            </>
+            </div>
           </li>
           <li>
-            <${Link} class="flex text-white text-3xl no-underline mt-5" href="/5">
+            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setPage(5)}>
               <span class="whitespace-nowrap">A capoeira</span>
               <div class="border-0 border-b-2 border-dotted w-full mb-2 mx-3"></div>
               <span>5</span>
-            </>
+            </div>
           </li>
           <li>
-            <${Link} class="flex text-white text-3xl no-underline mt-5" href="/8">
+            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setPage(8)}>
               <span class="whitespace-nowrap">Judô</span>
               <div class="border-0 border-b-2 border-dotted w-full mb-2 mx-3"></div>
               <span>8</span>
-            </>
+            </div>
           </li>
           <li>
-            <${Link} class="flex text-white text-3xl no-underline mt-5" href="/10">
+            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setPage(10)}>
               <span class="whitespace-nowrap">Kung fu</span>
               <div class="border-0 border-b-2 border-dotted w-full mb-2 mx-3"></div>
               <span>10</span>
-            </>
+            </div>
           </li>
           <li>
-            <${Link} class="flex text-white text-3xl no-underline mt-5" href="/11">
+            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setPage(12)}>
               <span class="whitespace-nowrap">Jackie Chan</span>
               <div class="border-0 border-b-2 border-dotted w-full mb-2 mx-3"></div>
               <span>12</span>
-            </>
+            </div>
           </li>
           <li>
-            <${Link} class="flex text-white text-3xl no-underline mt-5" href="/11">
+            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setPage(13)}>
               <span class="whitespace-nowrap">Bruce Lee</span>
               <div class="border-0 border-b-2 border-dotted w-full mb-2 mx-3"></div>
               <span>13</span>
-            </>
+            </div>
           </li>
         </ul>
       </nav>
@@ -169,8 +169,9 @@ export const Maganize: FunctionComponent = () => {
       `}
       <${TransformWrapper} minScale=${.25} initialScale=${.5} centerOnInit=${true}>
         <${TransformComponent} wrapperClass="!w-full">
+          <img src=${currentImage} />
           <div class="absolute">
-            ${pages[currentPage](setModalContent)}
+            ${pages[currentPage](setModalContent, setCurrentPage)}
           </div>
         </>
       </>
@@ -180,13 +181,11 @@ export const Maganize: FunctionComponent = () => {
         onPreviousPage=${() => {
           if (currentPage > 1) {
             setCurrentPage(currentPage - 1)
-            console.log(currentImage)
           }
         }}
         onNextPage=${() => {
           if (currentPage < pagesNumber) {
             setCurrentPage(currentPage + 1)
-            console.log(currentImage)
           }
         }}
       />
