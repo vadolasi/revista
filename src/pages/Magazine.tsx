@@ -149,7 +149,6 @@ export const Maganize: FunctionComponent = () => {
   const [modelContent, setModelContent] = useState<JSX.Element>()
   const [modelIsOpen, setModelIsOpen] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
-  const [test, setTest] = useState("a")
 
   const currentImage = new URL(`../assets/magazine/${currentPage}.svg`, import.meta.url).href
 
@@ -162,10 +161,9 @@ export const Maganize: FunctionComponent = () => {
     setModelIsOpen(true)
   }
 
-  return html`
+  return (
     <div class="!w-screen !h-screen flex flex-col bg-slate-800">
-      <button onclick=${() => setTest(test + "a")}>${test}</button>
-      ${modelIsOpen && html`
+      {modelIsOpen && html`
         <div class="absolute w-100 h-100 w-screen h-screen z-50 flex justify-center items-center">
           <div class="w-screen h-screen bg-black opacity-75 absolute z-40" onClick=${() => setModelIsOpen(false)}></div>
           <div class="z-50">
@@ -173,24 +171,24 @@ export const Maganize: FunctionComponent = () => {
           </div>
         </div>
       `}
-      <${TransformWrapper} minScale=${.25} initialScale=${.5} centerOnInit=${true}>
-        <${TransformComponent} wrapperClass="!w-full">
-          <img src=${currentImage} />
+      <TransformWrapper minScale={.25} initialScale={.5} centerOnInit={true}>
+        <TransformComponent wrapperClass="!w-full">
+          <img src={currentImage} />
           <div class="absolute">
             ${pages[currentPage](setModalContent, setCurrentPage)}
           </div>
-        </>
-      </>
-      <${Bottom}
-        pagesNumber=${pagesNumber - 1}
-        currentPage=${currentPage - 1}
-        onPreviousPage=${() => {
+        </TransformComponent>
+      </TransformWrapper>
+      <Bottom
+        pagesNumber={pagesNumber - 1}
+        currentPage={currentPage - 1}
+        onPreviousPage={() => {
           if (currentPage > 1) {
             setCurrentPage(currentPage - 1)
             console.log(currentPage, currentImage)
           }
         }}
-        onNextPage=${() => {
+        onNextPage={() => {
           if (currentPage < pagesNumber) {
             setCurrentPage(currentPage + 1)
             console.log(currentPage, currentImage)
@@ -198,5 +196,5 @@ export const Maganize: FunctionComponent = () => {
         }}
       />
     </div>
-  `
+  )
 }
