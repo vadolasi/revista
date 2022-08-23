@@ -27,11 +27,8 @@ export const LoginPage: FunctionComponent = () => {
     })
   })
 
-  const [test, setTest] = useState("a")
-
   return (
     <div>
-      <button onClick={() => setTest(test => test + "a")}>{test}</button>
       <button onClick={signIn}>Entrar com o google</button>
     </div>
   )

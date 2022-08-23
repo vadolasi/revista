@@ -1,7 +1,6 @@
 import { defineConfig } from "vite"
 import preact from "@preact/preset-vite"
 import Unocss from "unocss/vite"
-import dynamicImport from "vite-plugin-dynamic-import"
 
 export default defineConfig({
   plugins: [
@@ -16,9 +15,14 @@ export default defineConfig({
       }
     }),
     Unocss(),
-    dynamicImport.default()
-  ],
+   ],
   server: {
     host: true
+  },
+  resolve: {
+    alias: {
+      react: "preact/compat",
+      "react-dom": "preact/compat"
+    }
   }
 })

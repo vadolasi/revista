@@ -1,10 +1,9 @@
-import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch"
+import { TransformWrapper, TransformComponent } from "@pronestor/react-zoom-pan-pinch"
 import { html } from "htm/preact"
 import { FunctionComponent, JSX } from "preact"
 import { useState } from "preact/hooks"
 import { Bottom } from "../components/Bottom"
 import axios from "axios"
-import { useLocation } from "wouter-preact"
 
 const pages: { [key: number]: (setModelContent: (content: JSX.Element) => void, setPage: (page: number) => void) => JSX.Element } = {
   1: () => html``,
@@ -149,7 +148,6 @@ export const Maganize: FunctionComponent = () => {
   const [modelContent, setModelContent] = useState<JSX.Element>()
   const [modelIsOpen, setModelIsOpen] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
-  const [, setLocation] = useLocation()
 
   const currentImage = new URL(`../assets/magazine/${currentPage}.svg`, import.meta.url).href
 
@@ -158,9 +156,10 @@ export const Maganize: FunctionComponent = () => {
     setModelIsOpen(true)
   }
 
+  const [loading, setLoading] = useState(true)
+
   return html`
     <div class="!w-screen !h-screen flex flex-col bg-slate-800">
-      <button onClick=${() => setLocation("/login")}>Entrar</button>
       ${modelIsOpen && html`
         <div class="absolute w-100 h-100 w-screen h-screen z-50 flex justify-center items-center">
           <div class="w-screen h-screen bg-black opacity-75 absolute z-40" onClick=${() => setModelIsOpen(false)}></div>
@@ -171,10 +170,10 @@ export const Maganize: FunctionComponent = () => {
       `}
       <${TransformWrapper} minScale=${.25} initialScale=${.5} centerOnInit=${true}>
         <${TransformComponent} wrapperClass="!w-full">
-          <img src=${currentImage} />
-          <div class="absolute">
+          <img src=${currentImage} onLoad=${() => setLoading(false)} />
+          ${!loading && html`<div class="absolute">
             ${pages[currentPage](setModalContent, setCurrentPage)}
-          </div>
+          </div>`}
         </>
       </>
       <${Bottom}
@@ -183,11 +182,13 @@ export const Maganize: FunctionComponent = () => {
         onPreviousPage=${() => {
           if (currentPage > 1) {
             setCurrentPage(currentPage => currentPage - 1)
+            setLoading(true)
           }
         }}
         onNextPage=${() => {
           if (currentPage < pagesNumber) {
             setCurrentPage(currentPage => currentPage + 1)
+            setLoading(true)
           }
         }}
       />
