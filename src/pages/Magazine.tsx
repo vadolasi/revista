@@ -1,7 +1,7 @@
 import { TransformWrapper, TransformComponent } from "@pronestor/react-zoom-pan-pinch"
 import { html } from "htm/preact"
 import { FunctionComponent, JSX } from "preact"
-import { useEffect, useState } from "preact/hooks"
+import { useState } from "preact/hooks"
 import { Link, useLocation, useRoute } from "wouter-preact"
 import { Bottom } from "../components/Bottom"
 import axios from "axios"
@@ -149,11 +149,8 @@ export const Maganize: FunctionComponent = () => {
   const [modelContent, setModelContent] = useState<JSX.Element>()
   const [modelIsOpen, setModelIsOpen] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
-  const [currentImage, setCurrentImage] = useState(new URL(`../assets/magazine/${currentPage}.svg`, import.meta.url).href)
 
-  useEffect(() => {
-    setCurrentImage(new URL(`../assets/magazine/${currentPage}.svg`, import.meta.url).href)
-  }, [currentPage])
+  const currentImage = new URL(`../assets/magazine/${currentPage}.svg`, import.meta.url).href
 
   function setModalContent(content: JSX.Element) {
     setModelContent(content)
@@ -162,7 +159,6 @@ export const Maganize: FunctionComponent = () => {
 
   return html`
     <div class="!w-screen !h-screen flex flex-col bg-slate-800">
-      <p>${currentImage}</p>
       ${modelIsOpen && html`
         <div class="absolute w-100 h-100 w-screen h-screen z-50 flex justify-center items-center">
           <div class="w-screen h-screen bg-black opacity-75 absolute z-40" onClick=${() => setModelIsOpen(false)}></div>
