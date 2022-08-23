@@ -171,10 +171,12 @@ export const Maganize: FunctionComponent = () => {
       `}
       <${TransformWrapper} minScale=${.25} initialScale=${.5} centerOnInit=${true}>
         <${TransformComponent} wrapperClass="!w-full">
-          <img src=${currentImage} />
-          <div class="absolute">
-            ${pages[currentPage](setModalContent, setCurrentPage)}
-          </div>
+          <>
+            <img src=${currentImage} />
+            <div class="absolute">
+              ${pages[currentPage](setModalContent, setCurrentPage)}
+            </div>
+          </>
         </>
       </>
       <${Bottom}
