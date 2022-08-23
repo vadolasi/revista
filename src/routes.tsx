@@ -1,6 +1,6 @@
 import { html } from "htm/preact"
 import { FunctionComponent } from "preact"
-import { Redirect, Route } from "wouter-preact"
+import { Route } from "wouter-preact"
 import { LoginPage } from "./pages/Login"
 import { Maganize } from "./pages/Magazine"
 

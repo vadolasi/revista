@@ -4,6 +4,7 @@ import { FunctionComponent, JSX } from "preact"
 import { useState } from "preact/hooks"
 import { Bottom } from "../components/Bottom"
 import axios from "axios"
+import { useLocation } from "wouter-preact"
 
 const pages: { [key: number]: (setModelContent: (content: JSX.Element) => void, setPage: (page: number) => void) => JSX.Element } = {
   1: () => html``,
@@ -148,6 +149,7 @@ export const Maganize: FunctionComponent = () => {
   const [modelContent, setModelContent] = useState<JSX.Element>()
   const [modelIsOpen, setModelIsOpen] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
+  const [, setLocation] = useLocation()
 
   const currentImage = new URL(`../assets/magazine/${currentPage}.svg`, import.meta.url).href
 
@@ -158,6 +160,7 @@ export const Maganize: FunctionComponent = () => {
 
   return html`
     <div class="!w-screen !h-screen flex flex-col bg-slate-800">
+      <button onClick=${() => setLocation("/login")}>Entrar</button>
       ${modelIsOpen && html`
         <div class="absolute w-100 h-100 w-screen h-screen z-50 flex justify-center items-center">
           <div class="w-screen h-screen bg-black opacity-75 absolute z-40" onClick=${() => setModelIsOpen(false)}></div>
