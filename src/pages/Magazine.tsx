@@ -162,6 +162,7 @@ export const Maganize: FunctionComponent = () => {
 
   return html`
     <div class="!w-screen !h-screen flex flex-col bg-slate-800">
+      <p>${currentImage}</p>
       ${modelIsOpen && html`
         <div class="absolute w-100 h-100 w-screen h-screen z-50 flex justify-center items-center">
           <div class="w-screen h-screen bg-black opacity-75 absolute z-40" onClick=${() => setModelIsOpen(false)}></div>
