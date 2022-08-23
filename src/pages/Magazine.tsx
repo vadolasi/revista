@@ -191,9 +191,11 @@ export const Maganize: FunctionComponent = () => {
         onNextPage=${() => {
           if (currentPage < pagesNumber) {
             setCurrentPage(currentPage + 1)
+            console.log(currentPage, currentImage)
           }
         }}
       />
+      <button onclick=${setCurrentPage(currentPage + 1)} />
     </div>
   `
 }
