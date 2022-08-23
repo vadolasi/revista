@@ -1,8 +1,7 @@
-import { TransformWrapper, TransformComponent } from "@pronestor/react-zoom-pan-pinch"
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch"
 import { html } from "htm/preact"
 import { FunctionComponent, JSX } from "preact"
-import { useEffect, useState } from "preact/hooks"
-import { Link, useLocation, useRoute } from "wouter-preact"
+import { useState } from "preact/hooks"
 import { Bottom } from "../components/Bottom"
 import axios from "axios"
 
