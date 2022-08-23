@@ -161,9 +161,9 @@ export const Maganize: FunctionComponent = () => {
     setModelIsOpen(true)
   }
 
-  return (
+  return html`
     <div class="!w-screen !h-screen flex flex-col bg-slate-800">
-      {modelIsOpen && html`
+      ${modelIsOpen && html`
         <div class="absolute w-100 h-100 w-screen h-screen z-50 flex justify-center items-center">
           <div class="w-screen h-screen bg-black opacity-75 absolute z-40" onClick=${() => setModelIsOpen(false)}></div>
           <div class="z-50">
@@ -171,24 +171,24 @@ export const Maganize: FunctionComponent = () => {
           </div>
         </div>
       `}
-      <TransformWrapper minScale={.25} initialScale={.5} centerOnInit={true}>
-        <TransformComponent wrapperClass="!w-full">
-          <img src={currentImage} />
+      <${TransformWrapper} minScale=${.25} initialScale=${.5} centerOnInit=${true}>
+        <${TransformComponent} wrapperClass="!w-full">
+          <img src=${currentImage} />
           <div class="absolute">
             ${pages[currentPage](setModalContent, setCurrentPage)}
           </div>
-        </TransformComponent>
-      </TransformWrapper>
-      <Bottom
-        pagesNumber={pagesNumber - 1}
-        currentPage={currentPage - 1}
-        onPreviousPage={() => {
+        </>
+      </>
+      <${Bottom}
+        pagesNumber=${pagesNumber - 1}
+        currentPage=${currentPage - 1}
+        onPreviousPage=${() => {
           if (currentPage > 1) {
             setCurrentPage(currentPage - 1)
             console.log(currentPage, currentImage)
           }
         }}
-        onNextPage={() => {
+        onNextPage=${() => {
           if (currentPage < pagesNumber) {
             setCurrentPage(currentPage + 1)
             console.log(currentPage, currentImage)
@@ -196,5 +196,5 @@ export const Maganize: FunctionComponent = () => {
         }}
       />
     </div>
-  )
+  `
 }
