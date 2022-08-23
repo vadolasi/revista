@@ -152,10 +152,6 @@ export const Maganize: FunctionComponent = () => {
 
   const currentImage = new URL(`../assets/magazine/${currentPage}.svg`, import.meta.url).href
 
-  useEffect(() => {
-    console.log(currentPage, currentImage)
-  }, [currentPage])
-
   function setModalContent(content: JSX.Element) {
     setModelContent(content)
     setModelIsOpen(true)
@@ -184,14 +180,12 @@ export const Maganize: FunctionComponent = () => {
         currentPage=${currentPage - 1}
         onPreviousPage=${() => {
           if (currentPage > 1) {
-            setCurrentPage(currentPage - 1)
-            console.log(currentPage, currentImage)
+            setCurrentPage(currentPage => currentPage - 1)
           }
         }}
         onNextPage=${() => {
           if (currentPage < pagesNumber) {
-            setCurrentPage(currentPage + 1)
-            console.log(currentPage, currentImage)
+            setCurrentPage(currentPage => currentPage + 1)
           }
         }}
       />
