@@ -1,7 +1,7 @@
 import { TransformWrapper, TransformComponent } from "@pronestor/react-zoom-pan-pinch"
 import { html } from "htm/preact"
 import { FunctionComponent, JSX } from "preact"
-import { useState } from "preact/hooks"
+import { useEffect, useState } from "preact/hooks"
 import { Link, useLocation, useRoute } from "wouter-preact"
 import { Bottom } from "../components/Bottom"
 import axios from "axios"
@@ -152,6 +152,10 @@ export const Maganize: FunctionComponent = () => {
 
   const currentImage = new URL(`../assets/magazine/${currentPage}.svg`, import.meta.url).href
 
+  useEffect(() => {
+    console.log(currentPage, currentImage)
+  }, [currentPage])
+
   function setModalContent(content: JSX.Element) {
     setModelContent(content)
     setModelIsOpen(true)
@@ -181,6 +185,7 @@ export const Maganize: FunctionComponent = () => {
         onPreviousPage=${() => {
           if (currentPage > 1) {
             setCurrentPage(currentPage - 1)
+            console.log(currentPage, currentImage)
           }
         }}
         onNextPage=${() => {
