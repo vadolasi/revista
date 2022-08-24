@@ -28,7 +28,7 @@ const pages: { [key: number]: (setModelContent: (content: JSX.Element) => void, 
           </li>
           <li>
             <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setPage(5)}>
-              <span class="whitespace-nowrap">A capoeira</span>
+              <span class="whitespace-nowrap">Capoeira</span>
               <div class="border-0 border-b-2 border-dotted w-full mb-2 mx-3"></div>
               <span>5</span>
             </div>
@@ -61,20 +61,79 @@ const pages: { [key: number]: (setModelContent: (content: JSX.Element) => void, 
               <span>13</span>
             </div>
           </li>
+          <li>
+            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setPage(15)}>
+              <span class="whitespace-nowrap">Filmes com lutas</span>
+              <div class="border-0 border-b-2 border-dotted w-full mb-2 mx-3"></div>
+              <span>15</span>
+            </div>
+          </li>
+          <li>
+            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setPage(16)}>
+              <span class="whitespace-nowrap">Muay Thai</span>
+              <div class="border-0 border-b-2 border-dotted w-full mb-2 mx-3"></div>
+              <span>16</span>
+            </div>
+          </li>
+          <li>
+            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setPage(20)}>
+              <span class="whitespace-nowrap">Boxe</span>
+              <div class="border-0 border-b-2 border-dotted w-full mb-2 mx-3"></div>
+              <span>20</span>
+            </div>
+          </li>
+          <li>
+            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setPage(22)}>
+              <span class="whitespace-nowrap">Esgrima</span>
+              <div class="border-0 border-b-2 border-dotted w-full mb-2 mx-3"></div>
+              <span>22</span>
+            </div>
+          </li>
+          <li>
+            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setPage(24)}>
+              <span class="whitespace-nowrap">Referências</span>
+              <div class="border-0 border-b-2 border-dotted w-full mb-2 mx-3"></div>
+              <span>24</span>
+            </div>
+          </li>
         </ul>
       </nav>
     `
   },
   3: () => html``,
   4: () => html`
-    <div></div>
+    <button
+      class="absolute border-0 bg-transparent"
+      style=${{ width: "70px", height: "70px", marginLeft: "185px", marginTop: "287px" }}
+      onClick=${() => window.open("https://instagram.com/frosy_sant0s")}
+    ></button>
+    <button
+      class="absolute border-0 bg-transparent"
+      style=${{ width: "70px", height: "70px", marginLeft: "185px", marginTop: "810px" }}
+      onClick=${() => window.open("https://instagram.com/m.a.r.i.a.n.a_2.0")}
+    ></button>
+    <button
+      class="absolute border-0 bg-transparent"
+      style=${{ width: "70px", height: "70px", marginLeft: "647px", marginTop: "295px" }}
+      onClick=${() => window.open("https://instagram.com/lusiilva0")}
+    ></button>
+    <button
+      class="absolute border-0 bg-transparent"
+      style=${{ width: "70px", height: "70px", marginLeft: "624px", marginTop: "810px" }}
+      onClick=${() => window.open("https://instagram.com/vitordaniel.dev")}
+    ></button>
+    <button
+      class="absolute border-0 bg-transparent"
+      style=${{ width: "70px", height: "70px", marginLeft: "432px", marginTop: "576px" }}
+      onClick=${() => window.open("https://instagram.com/tarsillaeloi")}
+    ></button>
   `,
   5: (setModelContent: (content: JSX.Element) => void) => {
     function modalContent() {
       return html`
         <iframe
-          width="630"
-          height="355"
+          width="560"
+          height="315"
           src="https://www.youtube.com/embed/u8k31o0dhDw"
           title="Besouro: da capoeira nasce um herói"
           frameborder="0"
@@ -134,8 +193,15 @@ const pages: { [key: number]: (setModelContent: (content: JSX.Element) => void, 
   22: () => html``,
   23: () => html`
     <button
-      class="border-0 bg-transparent"
+      class="bg-transparent border-0 absolute"
       style=${{ width: "160px", height: "170px", marginLeft: "540px", marginTop: "610px" }}
+      onClick=${() => {
+        window.open("https://criadordecruzadinhas.com.br/wordsearch/6302d6da796f0b005ca55482")
+      }}
+    ></button>
+    <button
+      class="bg-transparent border-0 absolute"
+      style=${{ width: "115px", height: "90px", marginLeft: "565px", marginTop: "310px" }}
       onClick=${() => {
         window.open("https://criadordecruzadinhas.com.br/wordsearch/6302d6da796f0b005ca55482")
       }}
@@ -185,8 +251,8 @@ export const Maganize: FunctionComponent = () => {
       `}
       <${TransformWrapper} minScale=${.25} initialScale=${.5} centerOnInit=${true}>
         <${TransformComponent} wrapperClass="!w-full">
-          <img src=${currentImage} onLoad=${() => setLoading(false)} />
-          ${!loading && html`<div class="absolute">
+          <img src=${currentImage} onLoad=${() => setLoading(false)} class="m-25" />
+          ${!loading && html`<div class="absolute m-25 ">
             ${pages[currentPage](setModalContent, setCurrentPage)}
           </div>`}
         </>

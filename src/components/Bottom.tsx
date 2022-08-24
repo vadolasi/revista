@@ -13,7 +13,7 @@ export const Bottom: FunctionComponent<Props> = ({ currentPage, pagesNumber, onN
   const pagesProgress = currentPage * (100 / pagesNumber)
 
   return html`
-    <div class="w-full backdrop-blur-lg bg-black bg-opacity-25 h-20 flex flex-col absolute bottom-0">
+    <div class="w-full backdrop-blur bg-black bg-opacity-25 h-20 flex flex-col fixed bottom-0">
       <div class="w-full bg-white">
         <div class="h-1 bg-cyan-400" style=${{ width: `${pagesProgress}%` }}></div>
       </div>

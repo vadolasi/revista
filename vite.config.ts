@@ -19,11 +19,5 @@ export default defineConfig({
   server: {
     host: true,
     port: 80
-  },
-  resolve: {
-    alias: {
-      react: "preact/compat",
-      "react-dom": "preact/compat"
-    }
   }
 })
