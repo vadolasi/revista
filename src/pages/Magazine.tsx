@@ -4,6 +4,7 @@ import { FunctionComponent, JSX } from "preact"
 import { useState } from "preact/hooks"
 import { Bottom } from "../components/Bottom"
 import axios from "axios"
+import { useLocation, useRoute } from "wouter-preact"
 
 const pages: { [key: number]: (setModelContent: (content: JSX.Element) => void, setPage: (page: number) => void) => JSX.Element } = {
   1: () => html``,
@@ -145,15 +146,21 @@ const pages: { [key: number]: (setModelContent: (content: JSX.Element) => void, 
 
 export const Maganize: FunctionComponent = () => {
   const pagesNumber = 24
+  const [, params] = useRoute<{ page: string }>("/pages/:page")
+  const currentPage = parseInt(params!.page)
   const [modelContent, setModelContent] = useState<JSX.Element>()
+  const [, setLocation] = useLocation()
   const [modelIsOpen, setModelIsOpen] = useState(false)
-  const [currentPage, setCurrentPage] = useState(1)
 
   const currentImage = new URL(`../assets/magazine/${currentPage}.svg`, import.meta.url).href
 
   function setModalContent(content: JSX.Element) {
     setModelContent(content)
     setModelIsOpen(true)
+  }
+
+  const setCurrentPage = (page: number) => {
+    setLocation(`/pages/${page}`)
   }
 
   const [loading, setLoading] = useState(true)
@@ -181,13 +188,13 @@ export const Maganize: FunctionComponent = () => {
         currentPage=${currentPage - 1}
         onPreviousPage=${() => {
           if (currentPage > 1) {
-            setCurrentPage(currentPage => currentPage - 1)
+            setCurrentPage(currentPage - 1)
             setLoading(true)
           }
         }}
         onNextPage=${() => {
           if (currentPage < pagesNumber) {
-            setCurrentPage(currentPage => currentPage + 1)
+            setCurrentPage(currentPage + 1)
             setLoading(true)
           }
         }}

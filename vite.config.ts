@@ -17,8 +17,7 @@ export default defineConfig({
     Unocss(),
    ],
   server: {
-    host: true,
-    port: 80
+    host: true
   },
   resolve: {
     alias: {
