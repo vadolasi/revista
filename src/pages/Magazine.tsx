@@ -175,6 +175,14 @@ export const Maganize: FunctionComponent = () => {
           </div>
         </div>
       `}
+      ${loading && html`
+        <div class="absolute w-100 h-100 w-screen h-screen z-50 flex justify-center items-center">
+          <div class="w-screen h-screen bg-black opacity-75 absolute z-40"></div>
+          <div class="z-50">
+            <p class="text-3xl text-white font-bold">Carregando...</p>
+          </div>
+        </div>
+      `}
       <${TransformWrapper} minScale=${.25} initialScale=${.5} centerOnInit=${true}>
         <${TransformComponent} wrapperClass="!w-full">
           <img src=${currentImage} onLoad=${() => setLoading(false)} />
