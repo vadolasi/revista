@@ -262,12 +262,11 @@ const pages: { [key: number]: (setModelContent: (content: JSX.Element) => void, 
   26: () => html``,
   27: () => html``,
   28: () => html``,
-  29: () => html``,
-  30: () => html``
+  29: () => html``
 }
 
 export const Maganize: FunctionComponent = () => {
-  const pagesNumber = 30
+  const pagesNumber = 29
   const [, params] = useRoute<{ page: string }>("/pages/:page")
   const currentPage = parseInt(params!.page)
   const [modelContent, setModelContent] = useState<JSX.Element>()
