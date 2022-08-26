@@ -48,52 +48,59 @@ const pages: { [key: number]: (setModelContent: (content: JSX.Element) => void, 
             </div>
           </li>
           <li>
-            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setPage(12)}>
-              <span class="whitespace-nowrap">Jackie Chan</span>
-              <div class="border-0 border-b-2 border-dotted w-full mb-2 mx-3"></div>
-              <span>12</span>
-            </div>
-          </li>
-          <li>
             <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setPage(13)}>
-              <span class="whitespace-nowrap">Bruce Lee</span>
+              <span class="whitespace-nowrap">Jackie Chan</span>
               <div class="border-0 border-b-2 border-dotted w-full mb-2 mx-3"></div>
               <span>13</span>
             </div>
           </li>
           <li>
-            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setPage(15)}>
-              <span class="whitespace-nowrap">Filmes com lutas</span>
+            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setPage(14)}>
+              <span class="whitespace-nowrap">Bruce Lee</span>
               <div class="border-0 border-b-2 border-dotted w-full mb-2 mx-3"></div>
-              <span>15</span>
+              <span>14</span>
             </div>
           </li>
           <li>
             <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setPage(16)}>
-              <span class="whitespace-nowrap">Muay Thai</span>
+              <span class="whitespace-nowrap">Filmes com lutas</span>
               <div class="border-0 border-b-2 border-dotted w-full mb-2 mx-3"></div>
               <span>16</span>
             </div>
           </li>
           <li>
-            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setPage(20)}>
-              <span class="whitespace-nowrap">Boxe</span>
+            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setPage(17)}>
+              <span class="whitespace-nowrap">Muay Thai</span>
               <div class="border-0 border-b-2 border-dotted w-full mb-2 mx-3"></div>
-              <span>20</span>
+              <span>17</span>
             </div>
           </li>
           <li>
-            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setPage(22)}>
+            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setPage(21)}>
+              <span class="whitespace-nowrap">Boxe</span>
+              <div class="border-0 border-b-2 border-dotted w-full mb-2 mx-3"></div>
+              <span>21</span>
+            </div>
+          </li>
+          <li>
+            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setPage(23)}>
               <span class="whitespace-nowrap">Esgrima</span>
               <div class="border-0 border-b-2 border-dotted w-full mb-2 mx-3"></div>
-              <span>22</span>
+              <span>23</span>
+            </div>
+          </li>
+          <li>
+            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setPage(25)}>
+              <span class="whitespace-nowrap">Atores que já lutaram na vida real</span>
+              <div class="border-0 border-b-2 border-dotted w-full mb-2 mx-3"></div>
+              <span>25</span>
             </div>
           </li>
           <li>
             <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setPage(24)}>
               <span class="whitespace-nowrap">Referências</span>
               <div class="border-0 border-b-2 border-dotted w-full mb-2 mx-3"></div>
-              <span>24</span>
+              <span>29</span>
             </div>
           </li>
         </ul>
@@ -138,15 +145,15 @@ const pages: { [key: number]: (setModelContent: (content: JSX.Element) => void, 
           title="Besouro: da capoeira nasce um herói"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+          allowfullscreen
+        ></iframe>
       `
     }
 
     return html`
       <button
         class="bg-transparent rounded-0 border-0"
-        style=${{ width: "92px", height: "70px", marginLeft: "538px", marginTop: "875px" }}
+        style=${{ width: "335px", height: "270px", marginLeft: "420px", marginTop: "265px" }}
         onClick=${() => setModelContent(modalContent())}>
       </button>
     `
@@ -161,10 +168,53 @@ const pages: { [key: number]: (setModelContent: (content: JSX.Element) => void, 
       }}
     ></button>
   `,
-  8: () => html``,
+  8: (setModelContent: (content: JSX.Element) => void) => {
+    function modalContent() {
+      return html`
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/kzRFMIFVpZM"
+          title="YouTube video player"
+          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      `
+    }
+
+    return html`
+      <button
+        class="bg-transparent rounded-0 border-0"
+        style=${{ width: "265px", height: "400px", marginLeft: "460px", marginTop: "500px" }}
+        onClick=${() => setModelContent(modalContent())}>
+      </button>
+    `
+  },
   9: () => html``,
   10: () => html``,
-  11: () => html``,
+  11: (setModelContent: (content: JSX.Element) => void) => {
+    function modalContent() {
+      return html`
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/YZb5YNghQxA"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      `
+    }
+
+    return html`
+      <button
+        class="bg-transparent rounded-0 border-0"
+        style=${{ width: "305px", height: "450px", marginLeft: "435px", marginTop: "185px" }}
+        onClick=${() => setModelContent(modalContent())}>
+      </button>
+    `
+  },
   12: () => html``,
   13: () => html``,
   14: () => html``,
@@ -207,11 +257,17 @@ const pages: { [key: number]: (setModelContent: (content: JSX.Element) => void, 
       }}
     ></button>
   `,
-  24: () => html``
+  24: () => html``,
+  25: () => html``,
+  26: () => html``,
+  27: () => html``,
+  28: () => html``,
+  29: () => html``,
+  30: () => html``
 }
 
 export const Maganize: FunctionComponent = () => {
-  const pagesNumber = 24
+  const pagesNumber = 30
   const [, params] = useRoute<{ page: string }>("/pages/:page")
   const currentPage = parseInt(params!.page)
   const [modelContent, setModelContent] = useState<JSX.Element>()
