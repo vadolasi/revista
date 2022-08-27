@@ -318,7 +318,21 @@ const pages: { [key: number]: (setModelContent: (content: JSX.Element) => void, 
     }
 
     function JackieChanAndBruceLeeReferences() {
-      return html``
+      return html`
+        <div class="bg-slate-900 p-10">
+          <ul class="list-none">
+            <li>
+              <a class="flex text-white text-3xl no-underline mt-5" href="https://www.ebiografia.com/bruce_lee/#:~:text=Bruce%20Lee%20(1940%2D1973),tornou%20uma%20lenda%20do%20esporte">Bruce Lee | ebiografia.com</a>
+            </li>
+            <li>
+              <a class="flex text-white text-3xl no-underline mt-5" href="https://consideracoessobrefilmes.blogspot.com/2017/11/o-protetor-2005.html?m=1">JACKIE CHAN | adorocinema.com</a>
+            </li>
+            <li>
+              <a class="flex text-white text-3xl no-underline mt-5" href="https://rollingstone.uol.com.br/noticia/jackie-chan-conheceu-bruce-lee-depois-de-apanhar-de-verdade-em-filmagem-conheca-historia">Jackie Chan conheceu Bruce Lee depois de apanhar de verdade em filmagem; conheça a história | rollingstone.uol.com.br</a>
+            </li>
+          </ul>
+        </div>
+      `
     }
 
     function muayThayReferences() {
