@@ -97,7 +97,7 @@ const pages: { [key: number]: (setModelContent: (content: JSX.Element) => void, 
             </div>
           </li>
           <li>
-            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setPage(24)}>
+            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setPage(29)}>
               <span class="whitespace-nowrap">Referências</span>
               <div class="border-0 border-b-2 border-dotted w-full mb-2 mx-3"></div>
               <span>29</span>
@@ -262,7 +262,181 @@ const pages: { [key: number]: (setModelContent: (content: JSX.Element) => void, 
   26: () => html``,
   27: () => html``,
   28: () => html``,
-  29: () => html``
+  29: (setModelContent: (content: JSX.Element) => void) => {
+    function capoeiraReferences() {
+      return html`
+        <div class="bg-slate-900 p-10">
+          <ul class="list-none">
+            <li>
+              <a class="flex text-white text-3xl no-underline mt-5" href="https://www.suapesquisa.com/educacaoesportes/historia_da_capoeira.htm">História da Capoeira - origem, estilos, capoeira angola e características | suapesquisa.com</a>
+            </li>
+            <li>
+              <a class="flex text-white text-3xl no-underline mt-5" href="https://pt.wikipedia.org/wiki/Besouro_(filme)">Besouro (filme) | wikipedia.org</a>
+            </li>
+            <li>
+              <a class="flex text-white text-3xl no-underline mt-5" href="https://cinema10.com.br/filme/besouro">Besouro (Filme), Trailer, Sinopse e Curiosidades | cinema10.com.br</a>
+            </li>
+          </ul>
+        </div>
+      `
+    }
+
+    function judoReferences() {
+      return html`
+        <div class="bg-slate-900 p-10">
+          <ul class="list-none">
+            <li>
+              <a class="flex text-white text-3xl no-underline mt-5" href="https://m.suapesquisa.com/educacaoesportes/judo.htm">Judô | suapesquisa.com</a>
+            </li>
+            <li>
+              <a class="flex text-white text-3xl no-underline mt-5" href="http://www.cinevitor.com.br/elenco-de-grande-vitoria-lanca-filme-em-sao-paulo/">Elenco de A Grande Vitória lança filme em São Paulo | cinevitor.com.br</a>
+            </li>
+            <li>
+              <a class="flex text-white text-3xl no-underline mt-5" href="https://cinema10-com-br.cdn.ampproject.org/v/s/cinema10.com.br/filme/a-grande-vitoria?amp=&amp_gsa=1&amp_js_v=a9&usqp=mq331AQKKAFQArABIIACAw%3D%3D#amp_tf=De%20%251%24s&aoh=16600906622281&referrer=https%3A%2F%2Fwww.google.com&ampshare=https%3A%2F%2Fcinema10.com.br%2Ffilme%2Fa-grande-vitoria">A Grande Vitória | cinema10-com-br.cdn.ampproject.org</a>
+            </li>
+          </ul>
+        </div>
+      `
+    }
+
+    function KungFuReferences() {
+      return html`
+        <div class="bg-slate-900 p-10">
+          <ul class="list-none">
+            <li>
+              <a class="flex text-white text-3xl no-underline mt-5" href="https://www.adorocinema.com/filmes/filme-57959">KUNG-FUSÃO | adorocinema.com</a>
+            </li>
+            <li>
+              <a class="flex text-white text-3xl no-underline mt-5" href="https://brasilescola.uol.com.br/educacao-fisica/kung-fu.htm#:~:text=Acredita%2Dse%20que%20o%20kung,instalar%20no%20templo%20chin%C3%AAs%20Shaolin">Kung-Fu | brasilescola.uol.com.br</a>
+            </li>
+            <li>
+              <a class="flex text-white text-3xl no-underline mt-5" href="https://www.infoescola.com/artes-marciais/kung-fu">Kung Fu | infoescola.com</a>
+            </li>
+          </ul>
+        </div>
+      `
+    }
+
+    function JackieChanAndBruceLeeReferences() {
+      return html``
+    }
+
+    function muayThayReferences() {
+      return html`
+        <div class="bg-slate-900 p-10">
+          <ul class="list-none">
+            <li>
+              <a class="flex text-white text-3xl no-underline mt-5" href="https://www.significados.com.br/muay-thai/#:~:text=O%20Muay%20Thai%20surge%20como,ser%20praticada%20como%20um%20esporte">Significado de Muay Thai | significados.com.br</a>
+            </li>
+            <li>
+              <a class="flex text-white text-3xl no-underline mt-5" href="https://consideracoessobrefilmes.blogspot.com/2017/11/o-protetor-2005.html?m=1">O PROTETOR (2005) | consideracoessobrefilmes.blogspot.com</a>
+            </li>
+            <li>
+              <a class="flex text-white text-3xl no-underline mt-5" href="https://www.adorocinema.com/filmes/filme-182873/curiosidades/#:~:text=No%20in%C3%ADcio%2C%20o%20diretor%20Paul,que%20tamb%C3%A9m%20abandonou%20o%20filme">O PROTETOR | adorocinema.com</a>
+            </li>
+          </ul>
+        </div>
+      `
+    }
+
+    function boxeReferences() {
+      return html`
+        <div class="bg-slate-900 p-10">
+          <ul class="list-none">
+            <li>
+              <a class="flex text-white text-3xl no-underline mt-5" href="https://www.guiadoscuriosos.com.br/esportes/boxe/10-curiosidades-sobre-o-boxe">10 curiosidades sobre o boxe | guiadoscuriosos.com.br</a>
+            </li>
+            <li>
+              <a class="flex text-white text-3xl no-underline mt-5" href="https://www.significados.com.br/boxe/#:~:text=Boxe%20ou%20pugilismo%20%C3%A9%20um,um%20conjunto%20de%20regras%20predeterminadas">Boxe | significados.com.br</a>
+            </li>
+          </ul>
+        </div>
+      `
+    }
+
+    function esgrimaReferences() {
+      return html`
+        <div class="bg-slate-900 p-10">
+          <ul class="list-none">
+            <li>
+              <a class="flex text-white text-3xl no-underline mt-5" href="https://www.esgrimaster.com/historia-esgrima">HISTÓRIA DA ESGRIMA | esgrimaster.com</a>
+            </li>
+            <li>
+              <a class="flex text-white text-3xl no-underline mt-5" href="https://consideracoessobrefilmes.blogspot.com/2017/11/o-protetor-2005.html?m=1">Na Ponta | filmow.com</a>
+            </li>
+          </ul>
+        </div>
+      `
+    }
+
+    function atoresQueJaLutaramNaVidaRealReferences() {
+      return html`
+        <div class="bg-slate-900 p-10">
+          <ul class="list-none">
+            <li>
+              <a class="flex text-white text-3xl no-underline mt-5" href="https://youtu.be/LagioeOOUTs">14 ATORES do CINEMA que LUTAM na vida real!!! | youtube.com</a>
+            </li>
+            <li>
+              <a class="flex text-white text-3xl no-underline mt-5" href="https://youtu.be/CpU47CJZiJ4">10 Curiosidades Billy Chow | youtube.com</a>
+            </li>
+            <li>
+              <a class="flex text-white text-3xl no-underline mt-5" href="https://pt.wikipedia.org/wiki/Benny_Urquidez">Benny Urquidez | wikipedia.org</a>
+            </li>
+            <li>
+              <a class="flex text-white text-3xl no-underline mt-5" href="https://pt.wikipedia.org/wiki/Chuck_Norris">Chuck Norris | wikipedia.org</a>
+            </li>
+          </ul>
+        </div>
+      `
+    }
+
+    return html`
+      <nav style=${{ marginTop: "300px", width: "520px" }}>
+        <ul class="list-none">
+          <li>
+            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setModelContent(capoeiraReferences())}>
+              <span class="whitespace-nowrap">Capoeira</span>
+            </div>
+          </li>
+          <li>
+            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setModelContent(judoReferences())}>
+              <span class="whitespace-nowrap">Judô</span>
+            </div>
+          </li>
+          <li>
+            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setModelContent(KungFuReferences())}>
+              <span class="whitespace-nowrap">Kung fu</span>
+            </div>
+          </li>
+          <li>
+            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setModelContent(JackieChanAndBruceLeeReferences())}>
+              <span class="whitespace-nowrap">Jackie Chan e Bruce Lee</span>
+            </div>
+          </li>
+          <li>
+            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setModelContent(muayThayReferences())}>
+              <span class="whitespace-nowrap">Muay Thai</span>
+            </div>
+          </li>
+          <li>
+            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setModelContent(boxeReferences())}>
+              <span class="whitespace-nowrap">Boxe</span>
+            </div>
+          </li>
+          <li>
+            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setModelContent(esgrimaReferences())}>
+              <span class="whitespace-nowrap">Esgrima</span>
+            </div>
+          </li>
+          <li>
+            <div class="flex text-white text-3xl no-underline mt-5" onClick=${() => setModelContent(atoresQueJaLutaramNaVidaRealReferences())}>
+              <span class="whitespace-nowrap">Atores que já lutaram na vida real</span>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    `
+  }
 }
 
 export const Maganize: FunctionComponent = () => {
@@ -307,7 +481,7 @@ export const Maganize: FunctionComponent = () => {
       <${TransformWrapper} minScale=${.25} initialScale=${.5} centerOnInit=${true}>
         <${TransformComponent} wrapperClass="!w-full">
           <img src=${currentImage} onLoad=${() => setLoading(false)} class="m-25" />
-          ${!loading && html`<div class="absolute m-25 ">
+          ${!loading && html`<div class="absolute m-25">
             ${pages[currentPage](setModalContent, setCurrentPage)}
           </div>`}
         </>
