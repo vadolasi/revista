@@ -190,7 +190,9 @@ const pages: { [key: number]: (setModelContent: (content: JSX.Element) => void, 
       </button>
     `
   },
-  9: () => html``,
+  9: () => html`
+    <button class="border-0 bg-transparent" style=${{ width: "165px", height: "165px", marginTop: "730px", marginLeft: "321px" }} onClick=${() => window.open("https://forms.gle/PvEEBtnnZywrpVWw7")}></button>
+  `,
   10: () => html``,
   11: (setModelContent: (content: JSX.Element) => void) => {
     function modalContent() {
@@ -237,30 +239,192 @@ const pages: { [key: number]: (setModelContent: (content: JSX.Element) => void, 
   16: () => html``,
   17: () => html``,
   18: () => html``,
-  19: () => html``,
-  20: () => html``,
+  19: (setModelContent: (content: JSX.Element) => void) => {
+    function modalContent() {
+      return html`
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/TyAB2gtsgSw"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      `
+    }
+
+    return html`
+      <button
+        class="bg-transparent border-0"
+        style=${{ width: "330px", height: "490px", marginLeft: "425px", marginTop: "145px" }}
+        onClick=${() => setModelContent(modalContent())}>
+      </button>
+    `
+  },
+  20: () => html`
+    <button class="border-0 bg-transparent" style=${{ width: "165px", height: "165px", marginTop: "810px", marginLeft: "310px" }} onClick=${() => window.open("https://forms.gle/PdmTbT5o4S1PEUPu6")}></button>
+  `,
   21: () => html``,
   22: () => html``,
-  23: () => html`
+  23: (setModelContent: (content: JSX.Element) => void) => {
+    function modalContent() {
+      return html`
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/pTSmgRjCg2Y"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      `
+    }
+
+    return html`
+      <button
+        class="bg-transparent border-0"
+        style=${{ width: "200px", height: "140px", marginLeft: "120px", marginTop: "890px" }}
+        onClick=${() => setModelContent(modalContent())}>
+      </button>
+    `
+  },
+  24: () => html`
     <button
-      class="bg-transparent border-0 absolute"
-      style=${{ width: "160px", height: "170px", marginLeft: "540px", marginTop: "610px" }}
-      onClick=${() => {
-        window.open("https://criadordecruzadinhas.com.br/wordsearch/6302d6da796f0b005ca55482")
-      }}
-    ></button>
-    <button
-      class="bg-transparent border-0 absolute"
-      style=${{ width: "115px", height: "90px", marginLeft: "565px", marginTop: "310px" }}
+      class="bg-transparent border-0"
+      style=${{ width: "165px", height: "160px", marginLeft: "320px", marginTop: "705px" }}
       onClick=${() => {
         window.open("https://criadordecruzadinhas.com.br/wordsearch/6302d6da796f0b005ca55482")
       }}
     ></button>
   `,
-  24: () => html``,
-  25: () => html``,
-  26: () => html``,
-  27: () => html``,
+  25: (setModelContent: (content: JSX.Element) => void) => {
+    function dragoesParaSempre() {
+      return html`
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/PMLdKeKdNgg"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      `
+    }
+
+    function lutarOuMorrer() {
+      return html`
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/AnhQZT_4sao"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      `
+    }
+
+    return html`
+      <button
+        class="bg-transparent border-0"
+        style=${{ width: "250px", height: "355px", marginLeft: "470px", marginTop: "205px" }}
+        onClick=${() => setModelContent(dragoesParaSempre())}>
+      </button>
+      <button
+        class="bg-transparent border-0"
+        style=${{ width: "255px", height: "355px", marginLeft: "470px", marginTop: "65px" }}
+        onClick=${() => setModelContent(lutarOuMorrer())}>
+      </button>
+    `
+  },
+  26: (setModelContent: (content: JSX.Element) => void) => {
+    function detonandoEmBarcelona() {
+      return html`
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/SA_2sYJIT3w"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      `
+    }
+
+    function detonandoEmBarcelonaLuta() {
+      return html`
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/SA_2sYJIT3w?start=5761"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      `
+    }
+
+    function dragoesParaSempreLuta() {
+      return html`
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/PMLdKeKdNgg?start=5136"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      `
+    }
+
+    return html`
+      <button
+        class="bg-transparent border-0 absolute"
+        style=${{ width: "350px", height: "190px", marginLeft: "25px", marginTop: "475px" }}
+        onClick=${() => setModelContent(detonandoEmBarcelonaLuta())}>
+      </button>
+      <button
+        class="bg-transparent border-0 absolute"
+        style=${{ width: "330px", height: "180px", marginLeft: "40px", marginTop: "765px" }}
+        onClick=${() => setModelContent(dragoesParaSempreLuta())}>
+      </button>
+      <button
+        class="bg-transparent border-0 absolute"
+        style=${{ width: "225px", height: "260px", marginLeft: "480px", marginTop: "660px" }}
+        onClick=${() => setModelContent(detonandoEmBarcelona())}>
+      </button>
+    `
+  },
+  27: (setModelContent: (content: JSX.Element) => void) => {
+    function modalContent() {
+      return html`
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/I5f1QcawTRc"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      `
+    }
+
+    return html`
+      <button
+        class="bg-transparent border-1"
+        style=${{ width: "350px", height: "190px", marginLeft: "25px", marginTop: "475px" }}
+        onClick=${() => setModelContent(modalContent())}>
+      </button>
+    `
+  },
   28: () => html``,
   29: (setModelContent: (content: JSX.Element) => void) => {
     function capoeiraReferences() {
